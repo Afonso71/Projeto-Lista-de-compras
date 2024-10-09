@@ -1,0 +1,15 @@
+<!-- src/app/shopping-item/shopping-item.component.html -->
+<div *ngIf="!isEditing">
+    <span (click)="toggleBought()" [style.textDecoration]="item.bought ? 'line-through' : 'none'">
+      {{ item.name }}
+    </span>
+    <button (click)="editItem()">Editar</button>
+    <button (click)="deleteItem()">Excluir</button>
+  </div>
+  
+  <div *ngIf="isEditing">
+    <input [(ngModel)]="newItemName" />
+    <button (click)="saveItem()">Salvar</button>
+    <button (click)="cancelEdit()">Cancelar</button>
+  </div>
+  

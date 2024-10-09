@@ -1,0 +1,5 @@
+<form [formGroup]="form" (ngSubmit)="addItem()">
+    <input formControlName="itemName" placeholder="Adicionar item..." />
+    <button type="submit" [disabled]="form.invalid">Adicionar</button>
+  </form>
+  
